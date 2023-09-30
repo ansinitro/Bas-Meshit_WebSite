@@ -4,113 +4,156 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="icon" href="u.ico">
-  <link rel="stylesheet" href="style.css">
+  <title>Bas Meshit</title>
+  <link rel="icon" href="mosque.ico">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- CSS writed by hand -->
+  <link rel="stylesheet" href="css/bootstrap-css.css">
+
+  <!-- GOOGLE Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
   <script src="https://kit.fontawesome.com/0724e5b9c8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <section class="header">
-    <nav>
-      <a href="index.html"><img src="images/logo.png" id="logo" alt="logo.png"></a>
-      <div class="nav-links">
-        <ul>
-          <li><a href="">HOME</a></li>
-          <li><a href="">ABOUT</a></li>
-          <li><a href="">COURSE</a></li>
-          <li><a href="prayer.html">PRAYER</a></li>
-          <li><a href="">CONTACT</a></li>
+  <section id="header" class="header position-relative min-vh-100 w-100 overflow-hidden">
+    <nav class="justify-content-between align-items-center d-flex py-5 px-5 mx-5">
+      <a class="navbar-brand fs-1 text-info fw-bolder px-3 py-1" href="index.html">Бас Мешіт</a>
+      <!-- <a href="index.html"><img width="100px" src="images/logo.png" id="logo" alt="logo.png"></a> -->
+      <div class="nav-links d-flex flex-grow-1 justify-content-end h-100 align-items-center mt-2">
+        <ul class="list-unstyled m-0 h-100">
+          <li class="d-inline-block px-3 py-1 position-relative"><a href="#header"
+              class="text-decoration-none text-light fs-6">БАСТЫ</a></li>
+          <li class="d-inline-block px-3 py-1 position-relative"><a href="#course"
+              class="text-decoration-none text-light fs-6">КУРС</a></li>
+          <li class="d-inline-block px-3 py-1 position-relative"><a href="#news"
+              class="text-decoration-none text-light fs-6">ЖАҢАЛЫҚ</a></li>
+
+          <li class="d-inline-block px-3 py-1 position-relative"><a href="prayer.html"
+              class="text-decoration-none text-light fs-6">НАМАЗ</a></li>
+          <li class="d-inline-block px-3 py-1 position-relative"><a href="contact-us.html"
+              class="text-decoration-none text-light fs-6">БАЙЛАНЫС</a></li>
         </ul>
       </div>
     </nav>
-    <div class="text-box">
-      <h1>The Biggest Mosque in Central Asia</h1>
-      <p><em>Mosque in Astana, Kazakhstan.</em> This is one of <strong>the
-          largest mosques</strong> in Kazakhstan and Central Asia.</p>
-      <a href="" class="hero-btn">Visit Us To Know More</a>
+    <div class="text-box position-absolute top-50 start-50 translate-middle text-center text-light w-100">
+      <h1 class="mb-5">Орталық Азиядағы Ең Үлкен Мешіт</h1>
+      <p class="fs-14px text-light my-5">Әлемдегі <em>ең үлкен</em> 10 мешіттің бірі. Қазакстан 
+        Республикасының <span style="color: aqua;"><strong>Астана қаласында</strong></span>
+        орналасқан Азиядағы ең үлкен мешіт. </p>
+      <a href="" class="btn btn-outline-info text-light  btn-sm px-4 py-2 rounded-3">Толығырақ Білу Үшін Бізге Келіңіз</a>
     </div>
   </section>
 
   <!-------- Course -------->
-  <section class="course">
-    <h1>Courses We Offer</h1>
-    <hr style="width: 24%; text-align: center; margin: auto;">
-    <p>Аллах Тағалаға жақындау.</p>
+  <section id="course" class="container w-80 m-auto text-center p-0 py-5">
+    <h1 class="fw-semibold h1 fs-2">Біз Ұсынатын Курстар</h1>
+    <hr width="24%" class="text-center m-auto">
+    <p class="text-secondary p-2 fw-light fs-14px">Аллах Тағалаға жақындау.</p>
 
-    <div class="row">
-      <div class="course-col">
-        <h3>Құран жаттау</h3>
-        <p>Ислам дінінің негізгі киелі кітап болып саналады.
-          Мұсылмандар оның Мұхаммед пайғамбарға ﷺ ақиқатты
-          баян ету үшін түсірілгендігіне, адамзатқа одан үзілместен
-          жеткен Аллаһтың сөзі екендігіне сеніп, иман келтіреді
-        </p>
+    <div class="row row-cols-1 row-cols-md-3 mt-3 g-4">
+      <div class="col">
+        <div class="course-col card h-100">
+          <img src="images/quran.jpg" class="card-img-top border-bottom" alt="quran.jpg">
+          <div class="card-body">
+            <h5 class="card-title">Құран жаттау</h5>
+            <p class="card-text">
+              Мұсылмандар оның Мұхаммед пайғамбарға ﷺ ақиқатты
+              баян ету үшін түсірілгендігіне, адамзатқа одан үзілместен
+              жеткен Аллаһтың сөзі екендігіне сеніп, иман келтіреді. <br> <br></p>
+            <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a>
+          </div>
+        </div>
       </div>
-      <div class="course-col">
-        <h3>Таджуид</h3>
-        <p> (араб.: تجويد‎) сөзі араб тілінде сөзді әдемілеу,
-          ділмарлық деген мағынада қолданылады, жалпы мағынасы
-          Құранды дауыстап оқу ережелері. Сөз түбірі ж-у-д үш әріптен
-          құралған, мағынасы жақсырақ қылу..
-        </p>
+
+      <div class="col">
+        <div class="course-col card h-100">
+          <img src="images/tajweed.png" class="card-img-top border-bottom" alt="tajweed.png">
+          <div class="card-body">
+            <h5 class="card-title">Таджуид</h5>
+            <p class="card-text">
+              (араб.: تجويد‎) сөзі араб тілінде сөзді әдемілеу,
+              ділмарлық деген мағынада қолданылады, жалпы мағынасы
+              Құранды дауыстап оқу ережелері. Сөз түбірі ж-у-д үш әріптен
+              құралған, мағынасы жақсырақ қылу.</p>
+            <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a>
+          </div>
+        </div>
       </div>
-      <div class="course-col">
-        <h3>Ислам негіздері</h3>
-        <p>Ислам дінінің негіздері, олар бесеу,
-          Қазақ тілінде Бес парыз деген атаумен аталады.
-          Әрбір адамның мұсылман болуы үшін орындалуы
-          парыз шарттары, олар:
-        </p>
+
+      <div class="col">
+        <div class="course-col card h-100">
+          <img src="images/fundamentals-of-islam.png" class="card-img-top border-bottom"
+            alt="fundamentals-of-islam.png">
+          <div class="card-body">
+            <h5 class="card-title">Ислам негіздері</h5>
+            <p class="card-text">
+              Ислам дінінің негіздері, олар бесеу,
+              Қазақ тілінде Бес парыз деген атаумен аталады.
+              Әрбір адамның мұсылман болуы үшін орындалуы
+              парыз шарттары, олар: Шаһада Намаз Ораза Зекет Қажылық</p>
+            <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!------- Beautiful Video ------->
 
-  <section class="campus">
-    <h1>Beautiful Video</h1>
-    <hr style="width: 18%; text-align: center; margin: auto;">
-    <p>by @bydastann</p>
+  <section id="beautiful-video" class="container w-80 m-auto text-center p-0 my-5 py-2">
+    <h1 class="fw-semibold h1 fs-2">Әдемі Бейнелер</h1>
+    <hr width="18%" class="text-center m-auto">
+    <p class="text-secondary p-2 fw-light fs-14px">Инстаграмнан <i class="bi bi-instagram"></i></p>
 
-    <div class="row">
-      <div class="campus-col">
-        <video autoplay loop muted src="videos/mosque-left.mp4"></video>
-        <div class="layer">
-          <h3>@bydastann</h3>
+    <div class="row justify-content-between mt-3 m-0">
+      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-3">
+        <video class="w-100 rounded-3" autoplay loop muted src="videos/mosque-left.mp4"></video>
+        <div class="layer rounded-3 position-absolute top-0 left-0">
+          <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bydastann</h3>
         </div>
       </div>
-      <div class="campus-col">
-        <video autoplay loop muted src="videos/mosque-mid.mp4"></video>
-        <div class="layer">
-          <h3>@bydastann</h3>
+      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-3">
+        <video class="w-100 rounded-3" autoplay loop muted src="videos/mosque-mid.mp4"></video>
+        <div class="layer rounded-3 position-absolute top-0 left-0">
+          <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bydastann</h3>
         </div>
       </div>
-      <div class="campus-col">
-        <video autoplay loop muted src="videos/mosque-right.mp4"></video>
-        <div class="layer">
-          <h3>@bas_meshit</h3>
+      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-3">
+        <video class="w-100 rounded-3" autoplay loop muted src="videos/mosque-right.mp4"></video>
+        <div class="layer rounded-3 position-absolute top-0 left-0">
+          <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bas_meshit</h3>
         </div>
       </div>
     </div>
   </section>
 
-  <!-------- Recent Meeting -------->
-  <section class="facilities">
-    <h1>Recent Meeting</h1>
-    <hr style="width: 18%; text-align: center; margin: auto;">
-    <p>The Main Recent News .</p>
+  <!-------- News -------->
+  <section id="news" class="container w-80 m-auto text-center p-0 my-5 py-2">
+    <h1 class="fw-semibold h1 fs-2">Жаңалықтар</h1>
+    <hr width="14%" class="text-center m-auto">
+    <p class="text-secondary p-2 fw-light fs-14px">Соңғы Жаңалықтар</p>
 
-    <div class="row">
-      <div class="facilities-col">
-        <img src="images/albania.jpg" alt="library.png">
-        <h3>АЛБАНИЯ ПРЕЗИДЕНТІ БАС МЕШІТТІ ЗИЯРАТ ЕТТІ</h3>
-        <p>Албания Республикасының Президенті Байрам
+    <div class="row d-flex justify-content-between mt-3 m-0">
+      <div class="col-md-4 col-sm-12 rounded-3 text-start p-0 px-3">
+        <img src="images/albania.jpg" class="rounded-3 w-100" alt="library.png">
+        <h3 class="my-3 fs-5 fw-semibold">АЛБАНИЯ ПРЕЗИДЕНТІ БАС МЕШІТТІ ЗИЯРАТ ЕТТІ</h3>
+        <p class="text-secondary p-2 fw-light fs-14px">Албания Республикасының Президенті Байрам
           Бегай елімізге жасаған мемлекеттік сапары барысында
           Астанадағы Республикалық бас мешітті арнайы аралап
           көрді. Зәулім мешітті мәртебелі мейманға Қазақстан
@@ -118,18 +161,19 @@
           Наурызбай қажы Тағанұлы таныстырды.
         </p>
       </div>
-      <div class="facilities-col">
-        <img src="images/2.jpg" alt="basketball.png">
-        <h3>МӘРТЕБЕЛІ ПРЕЗИДЕНТТЕР БАС МЕШІТТІ ЗИЯРАТ ЕТТІ</h3>
-        <p>Бүгін Қазақстан Республикасының Президенті
+      <div class="col-md-4 col-sm-12 rounded-3 text-start p-0 px-3">
+        <img src="images/2.jpg" class="rounded-3 w-100" alt="basketball.png">
+        <h3 class="my-3 fs-5 fw-semibold">МӘРТЕБЕЛІ ПРЕЗИДЕНТТЕР БАС МЕШІТТІ ЗИЯРАТ ЕТТІ</h3>
+        <p class="text-secondary p-2 fw-light fs-14px">Бүгін Қазақстан Республикасының Президенті
           Қасым-Жомарт Тоқаев пен Тәжікстан Республикасының
           Президенті Эмомали Рахмон ҚМДБ жанындағы Республикалық
           бас мешітті зиярат етті.</p>
       </div>
-      <div class="facilities-col">
-        <img src="images/sewing.jpg" alt="cafeteria.png">
-        <h3>БАС МЕШІТТЕ "ӨРНЕК" ТІГІН ОРТАЛЫҒЫ АШЫЛДЫ</h3>
-        <p>Бүгін қасиетті жұма күні ҚМДБ жанындағы Республикалық бас мешітте «Өрнек» тігін орталығы ашылды. Игі
+      <div class="col-md-4 col-sm-12 rounded-3 text-start p-0 px-3">
+        <img src="images/sewing.jpg" class="rounded-3 w-100" alt="cafeteria.png">
+        <h3 class="my-3 fs-5 fw-semibold">БАС МЕШІТТЕ "ӨРНЕК" ТІГІН ОРТАЛЫҒЫ АШЫЛДЫ</h3>
+        <p class="text-secondary p-2 fw-light fs-14px">Бүгін қасиетті жұма күні ҚМДБ жанындағы Республикалық бас мешітте
+          «Өрнек» тігін орталығы ашылды. Игі
           бастаманың ашылу салтанатына Бас мүфти Наурызбай қажы Тағанұлы арнайы қатысты.
         </p>
       </div>
@@ -137,30 +181,80 @@
   </section>
 
   <!------- Footer ------->
-  <section class="footer">
-    <h4>About Us</h4>
-    <hr style="width: 5%; text-align: center; margin: auto;">
-    <p>This WebSite was maken for Assignment1 of WEB Technologies. <br>
+  <section id="footer" class="footer w-80 m-auto text-center py-4 mt-3">
+    <h4 class="h6 mt-3 mb-0 text-center fw-semibold">Біз Туралы</h4>
+    <hr width="6%" class="text-center m-auto">
+    <p class="text-secondary p-2 lh-base fw-light fs-14px mt-4">This WebSite was maken for Assignment1 of WEB
+      Technologies. <br>
       Bas Meshit Main Web Page.</p>
-    <div class="row icons">
-      <a href="https://www.facebook.com/profile.php?id=100085373882026">
-        <i class="fa fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/bas_meshit/">
-        <i class="fa fa-instagram"></i>
-      </a>
-      <a href="https://t.me/basmeshit">
-        <i class="fa fa-telegram"></i>
-      </a>
-      <a href="https://www.youtube.com/channel/UC36B8zwQf5WvdW3uQfc4uuQ">
-        <i class="fa fa-youtube"></i>
-      </a>
-      <a href="https://www.tiktok.com/@bas_meshit">
-        <i class="fa-brands fa-tiktok"></i>
-      </a>
+
+    <div class="row align-items-center gx-0 justify-content-between m-auto w-50">
+      <div class="col d-flex justify-content-center">
+        <a target="_blank" href="https://www.facebook.com/profile.php?id=100085373882026">
+          <i class="fa fa-facebook"></i>
+        </a>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <a target="_blank" href="https://www.instagram.com/bas_meshit/">
+          <i class="fa fa-instagram"></i>
+        </a>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <a target="_blank" href="https://t.me/basmeshit">
+          <i class="fa fa-telegram"></i>
+        </a>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <a target="_blank" href="https://www.youtube.com/channel/UC36B8zwQf5WvdW3uQfc4uuQ">
+          <i class="fa fa-youtube"></i>
+        </a>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <a target="_blank" href="https://www.tiktok.com/@bas_meshit">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
     </div>
-    <p>&reg;Made with <i class="fa fa-heart-o"></i> by Angsar</p>
+
+    <p class="text-secondary p-2 lh-base fw-light fs-14px mt-4">&reg;Made with <i class="fa fa-heart-o"></i> by Angsar
+    </p>
   </section>
+
+
+  <!-- Scroll Top Button -->
+  <button type="button" class="btn btn-info text-light btn-floating btn-lg position-fixed m-3 bottom-0 end-0"
+    id="btn-back-to-top" style="display: none;">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+      scrollFunction();
+    };
+
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    mybutton.addEventListener("click", backToTop);
+
+    function backToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
 </body>
 
 </html>
