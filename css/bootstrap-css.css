@@ -82,7 +82,7 @@
 .sub-header {
   height: 50vh;
   background-image:
-    linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('images/mosque-background.jpg');
+    linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../images/mosque-background.jpg');
   background-position: center;
   background-size: cover;
 }
