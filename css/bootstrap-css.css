@@ -80,12 +80,8 @@
 /* ----- Prayer ----- */
 .sub-header {
   height: 50vh;
-<<<<<<< HEAD
-  background-image: linear-gradient(rgba(4, 9, 3, 0.7), rgba(4, 9, 3, 0.7)), url('../images/mosque-background-0.jpg');
-=======
   background-image:
-    linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../images/mosque-background.jpg');
->>>>>>> 23216e34a800349b834ccfa956ee09312b1ddbe1
+    linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../images/mosque-background-0.jpg');
   background-position: center;
   background-size: cover;
 }
