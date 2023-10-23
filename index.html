@@ -31,9 +31,51 @@
 </head>
 
 <body>
-  <section id="header" class="header position-relative min-vh-100 w-100 overflow-hidden">
+  <section id="header" style="background-image: linear-gradient(rgba(4, 9, 3, 0.7), rgba(4, 9, 3, 0.7)), url('../images/mosque-background-0.jpg')" class="header position-relative min-vh-100 w-100 overflow-hidden position-relative">
     <nav class="justify-content-between align-items-center d-flex py-5 px-5 mx-5">
       <a class="navbar-brand fs-1 text-info fw-bolder px-3 py-1" href="index.html">Бас Мешіт</a>
+      <!-- NAMAZ TIME -->
+      <div class="d-flex flex-grow-1 justify-content-end mt-2">
+        <div class="block_timeNamaz align-items-center">
+          <p class="time_namaz fajr mb-0 text-center" style="font-size: 11px !important;">Таң
+            <br><span id="tan"></span>
+          </p>
+        </div>
+        <div class="block_timeNamaz align-items-center">
+          <p class="time_namaz sunrise mb-0 text-center" style="font-size: 11px !important;">Күн
+            <br><span></span>
+          </p>
+        </div>
+        <div class="block_timeNamaz align-items-center">
+          <p class="time_namaz dhuhr mb-0 text-center" style="font-size: 11px !important;">Бесін
+            <br><span></span>
+          </p>
+        </div>
+        <div class="block_timeNamaz align-items-center">
+          <p class="time_namaz asr mb-0 text-center" style="font-size: 11px !important;">Екінті
+            <br><span></span>
+          </p>
+        </div>
+        <div class="block_timeNamaz align-items-center">
+          <p class="time_namaz maghrib mb-0 text-center" style="font-size: 11px !important;">Ақшам
+            <br><span></span>
+          </p>
+        </div>
+        <div class="block_timeNamaz align-items-center">
+          <p class="time_namaz isha mb-0 text-center" style="font-size: 11px !important;">Құптан
+            <br><span></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="d-flex flex-grow-1 justify-content-center mt-2 rounded-5">
+        <div class="block_timeNamaz align-items-center rounded-5">
+          <p id="time_remain" class="mb-0 text-center text-light" style="font-size: 11px !important;">Қалды
+            <br><span class="text-light"></span>
+          </p>
+        </div>
+      </div>
+
       <!-- <a href="index.html"><img width="100px" src="images/logo.png" id="logo" alt="logo.png"></a> -->
       <div class="nav-links d-flex flex-grow-1 justify-content-end h-100 align-items-center mt-2">
         <ul class="list-unstyled m-0 h-100">
@@ -43,9 +85,8 @@
               class="text-decoration-none text-light fs-6">КУРС</a></li>
           <li class="d-inline-block px-3 py-1 position-relative"><a href="#news"
               class="text-decoration-none text-light fs-6">ЖАҢАЛЫҚ</a></li>
-
-          <li class="d-inline-block px-3 py-1 position-relative"><a href="prayer.html"
-              class="text-decoration-none text-light fs-6">НАМАЗ</a></li>
+          <!-- <li class="d-inline-block px-3 py-1 position-relative"><a href="prayer.html"
+              class="text-decoration-none text-light fs-6">НАМАЗ</a></li> -->
           <li class="d-inline-block px-3 py-1 position-relative"><a href="contact-us.html"
               class="text-decoration-none text-light fs-6">БАЙЛАНЫС</a></li>
         </ul>
@@ -53,13 +94,22 @@
     </nav>
     <div class="text-box position-absolute top-50 start-50 translate-middle text-center text-light w-100">
       <h1 class="mb-5">Орталық Азиядағы Ең Үлкен Мешіт</h1>
-      <p class="fs-14px text-light my-5">Әлемдегі <em>ең үлкен</em> 10 мешіттің бірі. Қазакстан 
+      <p class="fs-14px text-light my-5">Әлемдегі <em>ең үлкен</em> 10 мешіттің бірі. Қазакстан
         Республикасының <span style="color: aqua;"><strong>Астана қаласында</strong></span>
         орналасқан Азиядағы ең үлкен мешіт. </p>
-      <a href="" class="btn btn-outline-info text-light  btn-sm px-4 py-2 rounded-3">Толығырақ Білу Үшін Бізге Келіңіз</a>
+      <a href="" id="comeUsBtn" class="btn btn-outline-info text-light  btn-sm px-4 py-2 rounded-3">Толығырақ Білу Үшін
+        Бізге Келіңіз</a>
     </div>
-  </section>
 
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" style="width: 8%;">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style="width: 8%;">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </section>
+  
   <!-------- Course -------->
   <section id="course" class="container w-80 m-auto text-center p-0 py-5">
     <h1 class="fw-semibold h1 fs-2">Біз Ұсынатын Курстар</h1>
@@ -76,7 +126,8 @@
               Мұсылмандар оның Мұхаммед пайғамбарға ﷺ ақиқатты
               баян ету үшін түсірілгендігіне, адамзатқа одан үзілместен
               жеткен Аллаһтың сөзі екендігіне сеніп, иман келтіреді. <br> <br></p>
-            <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a>
+            <!-- <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a> -->
+            <button class="btn text-light registration" style="background-color: #0dcaf0">Тіркелу</button>
           </div>
         </div>
       </div>
@@ -91,7 +142,8 @@
               ділмарлық деген мағынада қолданылады, жалпы мағынасы
               Құранды дауыстап оқу ережелері. Сөз түбірі ж-у-д үш әріптен
               құралған, мағынасы жақсырақ қылу.</p>
-            <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a>
+            <!-- <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a> -->
+            <button class="btn text-light registration" style="background-color: #0dcaf0">Тіркелу</button>
           </div>
         </div>
       </div>
@@ -107,7 +159,8 @@
               Қазақ тілінде Бес парыз деген атаумен аталады.
               Әрбір адамның мұсылман болуы үшін орындалуы
               парыз шарттары, олар: Шаһада Намаз Ораза Зекет Қажылық</p>
-            <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a>
+            <!-- <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a> -->
+            <button class="btn text-light registration" style="background-color: #0dcaf0">Тіркелу</button>
           </div>
         </div>
       </div>
@@ -115,26 +168,26 @@
   </section>
 
   <!------- Beautiful Video ------->
-
+<div class="w-100 m-0 p-0 m-auto">
   <section id="beautiful-video" class="container w-80 m-auto text-center p-0 my-5 py-2">
     <h1 class="fw-semibold h1 fs-2">Әдемі Бейнелер</h1>
     <hr width="18%" class="text-center m-auto">
     <p class="text-secondary p-2 fw-light fs-14px">Инстаграмнан <i class="bi bi-instagram"></i></p>
 
     <div class="row justify-content-between mt-3 m-0">
-      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-3">
+      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-2">
         <video class="w-100 rounded-3" autoplay loop muted src="videos/mosque-left.mp4"></video>
         <div class="layer rounded-3 position-absolute top-0 left-0">
           <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bydastann</h3>
         </div>
       </div>
-      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-3">
+      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-2">
         <video class="w-100 rounded-3" autoplay loop muted src="videos/mosque-mid.mp4"></video>
         <div class="layer rounded-3 position-absolute top-0 left-0">
           <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bydastann</h3>
         </div>
       </div>
-      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-3">
+      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-2">
         <video class="w-100 rounded-3" autoplay loop muted src="videos/mosque-right.mp4"></video>
         <div class="layer rounded-3 position-absolute top-0 left-0">
           <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bas_meshit</h3>
@@ -142,6 +195,9 @@
       </div>
     </div>
   </section>
+  <!-- <i class="fa-solid fa-arrow-left"></i>
+  <i class="fa-solid fa-arrow-right"></i> -->
+</div>
 
   <!-------- News -------->
   <section id="news" class="container w-80 m-auto text-center p-0 my-5 py-2">
@@ -191,27 +247,27 @@
     <div class="row align-items-center gx-0 justify-content-between m-auto w-50">
       <div class="col d-flex justify-content-center">
         <a target="_blank" href="https://www.facebook.com/profile.php?id=100085373882026">
-          <i class="fa fa-facebook"></i>
+          <i class="fa fa-facebook text-info"></i>
         </a>
       </div>
       <div class="col d-flex justify-content-center">
         <a target="_blank" href="https://www.instagram.com/bas_meshit/">
-          <i class="fa fa-instagram"></i>
+          <i class="fa fa-instagram text-info"></i>
         </a>
       </div>
       <div class="col d-flex justify-content-center">
         <a target="_blank" href="https://t.me/basmeshit">
-          <i class="fa fa-telegram"></i>
+          <i class="fa fa-telegram text-info"></i>
         </a>
       </div>
       <div class="col d-flex justify-content-center">
         <a target="_blank" href="https://www.youtube.com/channel/UC36B8zwQf5WvdW3uQfc4uuQ">
-          <i class="fa fa-youtube"></i>
+          <i class="fa fa-youtube text-info"></i>
         </a>
       </div>
       <div class="col d-flex justify-content-center">
         <a target="_blank" href="https://www.tiktok.com/@bas_meshit">
-          <i class="fa-brands fa-tiktok"></i>
+          <i class="fa-brands fa-tiktok text-info"></i>
         </a>
       </div>
     </div>
@@ -227,34 +283,11 @@
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <script>
-    //Get the button
-    let mybutton = document.getElementById("btn-back-to-top");
-
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-      scrollFunction();
-    };
-
-    function scrollFunction() {
-      if (
-        document.body.scrollTop > 20 ||
-        document.documentElement.scrollTop > 20
-      ) {
-        mybutton.style.display = "block";
-      } else {
-        mybutton.style.display = "none";
-      }
-    }
-    // When the user clicks on the button, scroll to the top of the document
-    mybutton.addEventListener("click", backToTop);
-
-    function backToTop() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-  </script>
-
+  <script src="js/scroll-btn.js"></script>
+  <script src="js/prompt-bottom.js"></script>
+  <script src="js/comeUs-btn.js"></script>
+  <script src="js/prayer-time.js"></script>
+  <script src="js/slider.js"></script>
 </body>
 
 </html>
