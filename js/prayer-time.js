@@ -118,15 +118,16 @@ async function updateTimer(formattedDate, formattedTime, stopInterval) {
   const targetDate = new Date(year, month, day, hours, minutes, 0).getTime();
   const currentDate = new Date().getTime();
   const timeRemaining = targetDate - currentDate;
+  
+  if (timeRemaining <= 1) {
+    clearInterval(stopInterval);
+    go();
+  }
 
   const hoursOutput = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutesOutput = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
   const secondsOutput = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-  if (hours <= 0) {
-    clearInterval(stopInterval);
-    document.getElementById('comeUsBtn').innerHTML = 'Timer expired!';
-    go();
-  }
+
   const timerText = `${hoursOutput.toString().padStart(2, '0')}:${minutesOutput.toString().padStart(2, '0')}:${secondsOutput.toString().padStart(2, '0')}`;
   document.getElementById('time_remain').getElementsByTagName("span")[0].innerHTML = timerText;
   if (hoursOutput == 0 && (minutesOutput < 20)) {
