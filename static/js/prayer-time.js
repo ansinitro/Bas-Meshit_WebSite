@@ -1,8 +1,8 @@
 async function fetchLocalJSON() {
   try {
-    //   const response = await fetch('js/data.json',{mode: 'no-cors'});
+    //   const response = await fetch('../static/json/data.json',{mode: 'no-cors'});
 
-    const response = await fetch('json/data.json', {
+    const response = await fetch('../static/json/data.json', {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -119,7 +119,7 @@ async function updateTimer(formattedDate, formattedTime, stopInterval) {
   const currentDate = new Date().getTime();
   const timeRemaining = targetDate - currentDate;
   
-  if (timeRemaining <= 1) {
+  if (timeRemaining <= 0) {
     clearInterval(stopInterval);
     go();
   }
@@ -142,7 +142,7 @@ let formattedDate = "hello";
 let prayerNext;
 let timerInterval;
 
-async function go() {
+async function main() {
   const response = await fetchLocalJSON();
   formattedDate = await getTodayTime();
   let todayTimeJSON = await getNeddedTimeJSON(response, formattedDate);
@@ -157,4 +157,4 @@ async function go() {
     updateTimer(formattedDate, prayerNext, stopInterval);
   }, 1000);
 }
-go();
+main();

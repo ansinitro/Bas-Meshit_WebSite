@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
   <!-- CSS writed by hand -->
-  <link rel="stylesheet" href="css/bootstrap-css.css">
+  <link rel="stylesheet" href="../static/css/bootstrap-css.css">
 
   <!-- GOOGLE Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,38 +31,40 @@
 </head>
 
 <body>
-  <section id="header" style="background-image: linear-gradient(rgba(4, 9, 3, 0.7), rgba(4, 9, 3, 0.7)), url('../images/mosque-background-0.jpg')" class="header position-relative min-vh-100 w-100 overflow-hidden position-relative">
-    <nav class="justify-content-between align-items-center d-flex py-5 px-5 mx-5">
+  <section id="header"
+    style="background-image: linear-gradient(rgba(4, 9, 3, 0.7), rgba(4, 9, 3, 0.7)), url('../static/images/mosque-background-0.jpg')"
+    class="header position-relative min-vh-100 w-100 overflow-hidden position-relative">
+    <nav class="justify-content-between align-items-center d-flex py-5">
       <a class="navbar-brand fs-1 text-info fw-bolder px-3 py-1" href="index.html">Бас Мешіт</a>
       <!-- NAMAZ TIME -->
       <div class="d-flex flex-grow-1 justify-content-end mt-2">
         <div class="block_timeNamaz align-items-center">
-          <p class="time_namaz fajr mb-0 text-center" style="font-size: 11px !important;">Таң
+          <p class="time_namaz fajr mb-0 text-center">Таң
             <br><span id="tan"></span>
           </p>
         </div>
         <div class="block_timeNamaz align-items-center">
-          <p class="time_namaz sunrise mb-0 text-center" style="font-size: 11px !important;">Күн
+          <p class="time_namaz sunrise mb-0 text-center">Күн
             <br><span></span>
           </p>
         </div>
         <div class="block_timeNamaz align-items-center">
-          <p class="time_namaz dhuhr mb-0 text-center" style="font-size: 11px !important;">Бесін
+          <p class="time_namaz dhuhr mb-0 text-center">Бесін
             <br><span></span>
           </p>
         </div>
         <div class="block_timeNamaz align-items-center">
-          <p class="time_namaz asr mb-0 text-center" style="font-size: 11px !important;">Екінті
+          <p class="time_namaz asr mb-0 text-center">Екінті
             <br><span></span>
           </p>
         </div>
         <div class="block_timeNamaz align-items-center">
-          <p class="time_namaz maghrib mb-0 text-center" style="font-size: 11px !important;">Ақшам
+          <p class="time_namaz maghrib mb-0 text-center">Ақшам
             <br><span></span>
           </p>
         </div>
         <div class="block_timeNamaz align-items-center">
-          <p class="time_namaz isha mb-0 text-center" style="font-size: 11px !important;">Құптан
+          <p class="time_namaz isha mb-0 text-center">Құптан
             <br><span></span>
           </p>
         </div>
@@ -77,20 +79,24 @@
       </div>
 
       <!-- <a href="index.html"><img width="100px" src="images/logo.png" id="logo" alt="logo.png"></a> -->
-      <div class="nav-links d-flex flex-grow-1 justify-content-end h-100 align-items-center mt-2">
+      <div class="nav-links d-flex flex-grow-1 h-100 align-items-center mt-2">
         <ul class="list-unstyled m-0 h-100">
-          <li class="d-inline-block px-3 py-1 position-relative"><a href="#header"
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <li class="px-3 py-1 position-relative"><a href="#header"
               class="text-decoration-none text-light fs-6">БАСТЫ</a></li>
-          <li class="d-inline-block px-3 py-1 position-relative"><a href="#course"
+          <li class="px-3 py-1 position-relative"><a href="#course"
               class="text-decoration-none text-light fs-6">КУРС</a></li>
-          <li class="d-inline-block px-3 py-1 position-relative"><a href="#news"
+          <li class="px-3 py-1 position-relative"><a href="#news"
               class="text-decoration-none text-light fs-6">ЖАҢАЛЫҚ</a></li>
           <!-- <li class="d-inline-block px-3 py-1 position-relative"><a href="prayer.html"
               class="text-decoration-none text-light fs-6">НАМАЗ</a></li> -->
-          <li class="d-inline-block px-3 py-1 position-relative"><a href="contact-us.html"
+          <li class="px-3 py-1 position-relative"><a href="contact-us.html"
               class="text-decoration-none text-light fs-6">БАЙЛАНЫС</a></li>
+          <li class="px-3 py-1 position-relative"><a href="login.html"
+              class="text-decoration-none text-light fs-6">КІРУ</a></li>
         </ul>
       </div>
+      <i class="fa-solid fa-bars" onclick="showMenu()"></i>
     </nav>
     <div class="text-box position-absolute top-50 start-50 translate-middle text-center text-light w-100">
       <h1 class="mb-5">Орталық Азиядағы Ең Үлкен Мешіт</h1>
@@ -101,15 +107,17 @@
         Бізге Келіңіз</a>
     </div>
 
-    
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev" style="width: 8%;">
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev"
+      style="width: 5%;">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next" style="width: 8%;">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next"
+      style="width: 5%;">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </button>
   </section>
-  
+
   <!-------- Course -------->
   <section id="course" class="container w-80 m-auto text-center p-0 py-5">
     <h1 class="fw-semibold h1 fs-2">Біз Ұсынатын Курстар</h1>
@@ -119,22 +127,21 @@
     <div class="row row-cols-1 row-cols-md-3 mt-3 g-4">
       <div class="col">
         <div class="course-col card h-100">
-          <img src="images/quran.jpg" class="card-img-top border-bottom" alt="quran.jpg">
+          <img src="../static/images/quran.jpg" class="card-img-top border-bottom" alt="quran.jpg">
           <div class="card-body">
             <h5 class="card-title">Құран жаттау</h5>
             <p class="card-text">
               Мұсылмандар оның Мұхаммед пайғамбарға ﷺ ақиқатты
               баян ету үшін түсірілгендігіне, адамзатқа одан үзілместен
               жеткен Аллаһтың сөзі екендігіне сеніп, иман келтіреді. <br> <br></p>
-            <!-- <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a> -->
-            <button class="btn text-light registration" style="background-color: #0dcaf0">Тіркелу</button>
+             <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a>
           </div>
         </div>
       </div>
 
       <div class="col">
         <div class="course-col card h-100">
-          <img src="images/tajweed.png" class="card-img-top border-bottom" alt="tajweed.png">
+          <img src="../static/images/tajweed.png" class="card-img-top border-bottom" alt="tajweed.png">
           <div class="card-body">
             <h5 class="card-title">Таджуид</h5>
             <p class="card-text">
@@ -142,16 +149,15 @@
               ділмарлық деген мағынада қолданылады, жалпы мағынасы
               Құранды дауыстап оқу ережелері. Сөз түбірі ж-у-д үш әріптен
               құралған, мағынасы жақсырақ қылу.</p>
-            <!-- <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a> -->
-            <button class="btn text-light registration" style="background-color: #0dcaf0">Тіркелу</button>
+             <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a>
           </div>
         </div>
       </div>
 
       <div class="col">
         <div class="course-col card h-100">
-          <img src="images/fundamentals-of-islam.png" class="card-img-top border-bottom"
-            alt="fundamentals-of-islam.png">
+          <img src="../static/images/fundamentals-of-islam.png" class="card-img-top border-bottom"
+               alt="fundamentals-of-islam.png">
           <div class="card-body">
             <h5 class="card-title">Ислам негіздері</h5>
             <p class="card-text">
@@ -159,8 +165,7 @@
               Қазақ тілінде Бес парыз деген атаумен аталады.
               Әрбір адамның мұсылман болуы үшін орындалуы
               парыз шарттары, олар: Шаһада Намаз Ораза Зекет Қажылық</p>
-            <!-- <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a> -->
-            <button class="btn text-light registration" style="background-color: #0dcaf0">Тіркелу</button>
+             <a href="registration.html" class="btn text-light" style="background-color: #0dcaf0">Тіркелу</a>
           </div>
         </div>
       </div>
@@ -168,36 +173,36 @@
   </section>
 
   <!------- Beautiful Video ------->
-<div class="w-100 m-0 p-0 m-auto">
-  <section id="beautiful-video" class="container w-80 m-auto text-center p-0 my-5 py-2">
-    <h1 class="fw-semibold h1 fs-2">Әдемі Бейнелер</h1>
-    <hr width="18%" class="text-center m-auto">
-    <p class="text-secondary p-2 fw-light fs-14px">Инстаграмнан <i class="bi bi-instagram"></i></p>
+  <div class="w-100 m-0 p-0 m-auto">
+    <section id="beautiful-video" class="container w-80 m-auto text-center p-0 my-5 py-2">
+      <h1 class="fw-semibold h1 fs-2">Әдемі Бейнелер</h1>
+      <hr width="18%" class="text-center m-auto">
+      <p class="text-secondary p-2 fw-light fs-14px">Инстаграмнан <i class="bi bi-instagram"></i></p>
 
-    <div class="row justify-content-between mt-3 m-0">
-      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-2">
-        <video class="w-100 rounded-3" autoplay loop muted src="videos/mosque-left.mp4"></video>
-        <div class="layer rounded-3 position-absolute top-0 left-0">
-          <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bydastann</h3>
+      <div class="row justify-content-between mt-3 m-0">
+        <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-2">
+          <video class="w-100 rounded-3" autoplay loop muted src="../static/videos/mosque-left.mp4"></video>
+          <div class="layer rounded-3 position-absolute top-0 left-0">
+            <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bydastann</h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-2">
+          <video class="w-100 rounded-3" autoplay loop muted src="../static/videos/mosque-mid.mp4"></video>
+          <div class="layer rounded-3 position-absolute top-0 left-0">
+            <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bydastann</h3>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-2">
+          <video class="w-100 rounded-3" autoplay loop muted src="../static/videos/mosque-right.mp4"></video>
+          <div class="layer rounded-3 position-absolute top-0 left-0">
+            <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bas_meshit</h3>
+          </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-2">
-        <video class="w-100 rounded-3" autoplay loop muted src="videos/mosque-mid.mp4"></video>
-        <div class="layer rounded-3 position-absolute top-0 left-0">
-          <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bydastann</h3>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-12 rounded-3 p-0 position-relative overflow-hidden px-2">
-        <video class="w-100 rounded-3" autoplay loop muted src="videos/mosque-right.mp4"></video>
-        <div class="layer rounded-3 position-absolute top-0 left-0">
-          <h3 class="position-absolute start-50 translate-middle-x text-white fw-500 fs-4">@bas_meshit</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- <i class="fa-solid fa-arrow-left"></i>
+    </section>
+    <!-- <i class="fa-solid fa-arrow-left"></i>
   <i class="fa-solid fa-arrow-right"></i> -->
-</div>
+  </div>
 
   <!-------- News -------->
   <section id="news" class="container w-80 m-auto text-center p-0 my-5 py-2">
@@ -207,7 +212,7 @@
 
     <div class="row d-flex justify-content-between mt-3 m-0">
       <div class="col-md-4 col-sm-12 rounded-3 text-start p-0 px-3">
-        <img src="images/albania.jpg" class="rounded-3 w-100" alt="library.png">
+        <img src="../static/images/albania.jpg" class="rounded-3 w-100" alt="library.png">
         <h3 class="my-3 fs-5 fw-semibold">АЛБАНИЯ ПРЕЗИДЕНТІ БАС МЕШІТТІ ЗИЯРАТ ЕТТІ</h3>
         <p class="text-secondary p-2 fw-light fs-14px">Албания Республикасының Президенті Байрам
           Бегай елімізге жасаған мемлекеттік сапары барысында
@@ -218,7 +223,7 @@
         </p>
       </div>
       <div class="col-md-4 col-sm-12 rounded-3 text-start p-0 px-3">
-        <img src="images/2.jpg" class="rounded-3 w-100" alt="basketball.png">
+        <img src="../static/images/2.jpg" class="rounded-3 w-100" alt="basketball.png">
         <h3 class="my-3 fs-5 fw-semibold">МӘРТЕБЕЛІ ПРЕЗИДЕНТТЕР БАС МЕШІТТІ ЗИЯРАТ ЕТТІ</h3>
         <p class="text-secondary p-2 fw-light fs-14px">Бүгін Қазақстан Республикасының Президенті
           Қасым-Жомарт Тоқаев пен Тәжікстан Республикасының
@@ -226,7 +231,7 @@
           бас мешітті зиярат етті.</p>
       </div>
       <div class="col-md-4 col-sm-12 rounded-3 text-start p-0 px-3">
-        <img src="images/sewing.jpg" class="rounded-3 w-100" alt="cafeteria.png">
+        <img src="../static/images/sewing.jpg" class="rounded-3 w-100" alt="cafeteria.png">
         <h3 class="my-3 fs-5 fw-semibold">БАС МЕШІТТЕ "ӨРНЕК" ТІГІН ОРТАЛЫҒЫ АШЫЛДЫ</h3>
         <p class="text-secondary p-2 fw-light fs-14px">Бүгін қасиетті жұма күні ҚМДБ жанындағы Республикалық бас мешітте
           «Өрнек» тігін орталығы ашылды. Игі
@@ -282,12 +287,12 @@
     id="btn-back-to-top" style="display: none;">
     <i class="fas fa-arrow-up"></i>
   </button>
-
-  <script src="js/scroll-btn.js"></script>
-  <script src="js/prompt-bottom.js"></script>
-  <script src="js/comeUs-btn.js"></script>
-  <script src="js/prayer-time.js"></script>
-  <script src="js/slider.js"></script>
+  <script src="../static/js/scroll-btn.js"></script>
+  <script src="../static/js/toolbar.js"></script>
+  <script src="../static/js/prompt-bottom.js"></script>
+  <script src="../static/js/comeUs-btn.js"></script>
+  <script src="../static/js/prayer-time.js"></script>
+  <script src="../static/js/slider.js"></script>
 </body>
 
 </html>

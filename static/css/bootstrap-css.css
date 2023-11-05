@@ -1,0 +1,238 @@
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+/* Bootstrap */
+.w-80 {
+  width: 80%;
+}
+
+.fs-14px {
+  font-size: 14px;
+}
+
+/* ----- Beautiful Video ----- */
+.layer {
+  width: 96%;
+  height: 99%;
+  transition: 0.5s;
+}
+
+.layer:hover {
+  background-color: rgba(76, 65, 65, 0.4);
+}
+
+.layer h3 {
+  bottom: 0;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.layer:hover h3 {
+  bottom: 49%;
+  opacity: 1;
+}
+
+
+/* ----- Course ----- */
+.course-col {
+  transition: 0.5s;
+}
+
+.course-col:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+/*Header */
+.header {
+  /* background-image: linear-gradient(rgba(4, 9, 3, 0.7), rgba(4, 9, 3, 0.7)), url('../images/mosque-background.jpg'); */
+  background-position: center;
+  background-size: cover;
+}
+
+.nav-links {
+  justify-content: end;
+}
+
+nav {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+nav .fa,
+nav .fa-solid {
+  display: none;
+}
+
+.nav-links ul li {
+  display: inline-block;
+}
+
+.nav-links ul li::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #0dcaf0;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+.text-box h1 {
+  font-size: 62px;
+}
+
+.time_namaz {
+  font-size: 11px
+}
+
+@media(max-width: 700px) {
+  .text-box h1 {
+    font-size: 24px;
+  }
+
+  nav {
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+
+  .nav-links ul {
+    padding: 30px;
+  }
+
+  .nav-links ul li {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    background-color: #0dcaf0;
+    border-radius: 10px;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    justify-content: space-between;
+    transition: 1s;
+  }
+
+  nav .fa,
+  nav .fa-solid {
+    display: block;
+    color: white;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  nav .block_timeNamaz {
+    display: none;
+    font-size: 100px;
+  }
+}
+
+/* ----- Prayer ----- */
+.sub-header {
+  height: 50vh;
+  background-image:
+    linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../../static/images/mosque-background-0.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+
+.block_timeNamaz {
+  width: 70px;
+  color: white;
+}
+
+.time_namaz.active {
+  background-color: #0dcaf0;
+  border-radius: 8px;
+}
+
+/* ----- Registration ----- */
+.submit {
+  color: #0dcaf0;
+}
+
+.submit:hover {
+  color: white;
+}
+
+/* ----- Login ----- */
+
+.form-box {
+  max-width: 450px;
+  padding: 3% 4% 5%;
+}
+
+.form-box h1 {
+  font-size: 30px;
+}
+
+.form-box h1::after {
+  content: '';
+  width: 20%;
+  height: 8%;
+  border-radius: 3px;
+  background: #0dcaf0;
+  position: absolute;
+  bottom: -25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#nameField {
+  max-height: 0;
+}
+
+.input-field {
+  background: #eaeaea;
+  max-height: 65px;
+  transition: 0.5s;
+}
+
+.inputs {
+  outline: 0;
+  padding: 3% 1%;
+}
+
+.input-field i{
+  margin-left: 5%;
+  margin-right: 3%;
+  color: #999;
+}
+
+form p {
+  font-size: 13px;
+}
+
+.input-groups {
+  height: 180px;
+}
+
+.btn-field button {
+  flex-basis: 48%;
+  height: 40px;
+  outline: 0;
+  cursor: pointer;
+  transition: 1s;
+}
+
+@media(max-width: 700px) {
+  .form-box h1{
+    font-size: 24px;
+  } 
+  .input-groups {
+    height: 160px;
+  }
+}

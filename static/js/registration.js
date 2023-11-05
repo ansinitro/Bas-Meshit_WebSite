@@ -20,10 +20,10 @@ form.addEventListener('submit', function (event) {
 });
 
 surname.addEventListener("input", function (element) {
-  isEmpty(surname, element);
+  isValidName(surname, element);
 });
 namee.addEventListener("input", function (element) {
-  isEmpty(namee, element);
+  isValidName(namee, element);
 });
 phoneNumber.addEventListener("input", function (element) {
   isValidNumber(phoneNumber, element);
@@ -81,14 +81,14 @@ function isValidEmail(el, element) {
   }
 }
 
-function isEmpty(el, element) {
-  let val = element.target.value.trim();
-
-  el.setAttribute("value", val);
-  if (val === '') {
-    setInvalid(el);
-  } else {
+function isValidName(el, element) {
+  let namee = element.target.value.trim();
+  const regex = new RegExp('^[A-Z][a-z]+');
+  console.log(regex.test(namee), namee);
+  if (regex.test(namee) && (namee.length > 2 && namee.length < 50)) {
     setValid(el);
+  } else {
+    setInvalid(el);
   }
 }
 
