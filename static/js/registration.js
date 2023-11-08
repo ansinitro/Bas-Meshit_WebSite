@@ -12,10 +12,8 @@ form.addEventListener('submit', function (event) {
     setInvalid(course);
     event.preventDefault();
   }
-  if (form.getElementsByClassName("is-valid").length == 7) {
-    alert("Сіздің форманыз қабылданды.");
-  } else {
-    alert("Қатені дұрыстаңыз.");
+  if (form.getElementsByClassName("is-valid").length != 7) {
+    event.preventDefault();
   }
 });
 
@@ -83,9 +81,10 @@ function isValidEmail(el, element) {
 
 function isValidName(el, element) {
   let namee = element.target.value.trim();
+  el.setAttribute("value", val)
   const regex = new RegExp('^[A-Z][a-z]+');
   console.log(regex.test(namee), namee);
-  if (regex.test(namee) && (namee.length > 2 && namee.length < 50)) {
+  if (regex.test(namee) && (namee.length >= 2 && namee.length < 50)) {
     setValid(el);
   } else {
     setInvalid(el);

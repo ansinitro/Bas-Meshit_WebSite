@@ -99,38 +99,8 @@
     </nav>
       <div
         class="form-box bg-light text-center position-absolute top-50 start-50 translate-middle text-center text-light rounded-4 w-80">
-        <h1 class="mb-4 position-relative text-info" id="title">Кіру</h1>
-        <form id="form" name="form" action="/signin" method="POST">
-          <div class="input-groups">
-            <div class="input-field my-2 rounded-2 align-items-center d-flex overflow-hidden" id="nameField">
-              <i class="fa-solid fa-user"></i>
-              <input id="name" type="text" name="name" placeholder="Аты" class="inputs w-100 bg-transparent border-0 form-control">
-            </div>
-            <div class="input-field my-2 rounded-2 align-items-center d-flex overflow-hidden">
-              <i class="fa-solid fa-envelope"></i>
-              <input id="email" type="text" name="email" placeholder="Пошта" class="inputs w-100 bg-transparent border-0 form-control">
-            </div>
-            <div class="input-field my-2 rounded-2 align-items-center d-flex overflow-hidden">
-              <i class="fa-solid fa-lock"></i>
-              <input id="passwd" name="passwd" type="password" placeholder="Құпия сөз (qwerty_1)" class="inputs w-100 bg-transparent border-0 form-control">
-            </div>
-            <p id="forgotPasswd" class="text-start text-dark ">Құпия сөзді ұмытсаңыз <a href="/forgotPassword" class="text-decoration-none text-info">Маған басыңыз! :)</a></p>
-            <br><br>
-          </div>
-          <div class="btn-field w-100 d-flex justify-content-between">
-            <button type="button" class="text-light bg-info rounded-start-pill bg-info border-0 col-4" id="signInBtn">Кіру</button>
-            <button type="submit" class="text-light bg-success border-0 col-4" id="">Растау</button>
-            <button type="button" class="text-light bg-secondary rounded-end-pill bg-secondary border-0 col-4" id="signUpBtn">Тіркелу</button>
-          </div>
-          <br>
-          {{if .}}
-            {{if eq . "User was created"}}
-              <p class="text-success fs-14px m-0">{{.}}</p>
-            {{else}}
-              <p class="text-warning fs-14px m-0">{{.}}</p>
-            {{end}}
-          {{end}}
-        </form>
+        <h1 class="mb-4 position-relative text-info" id="title">Бәрі керемет</h1>
+        <p class="text-success fs-3 m-0">{{.}}</p>
       </div>
     </div>
   </section>

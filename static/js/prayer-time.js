@@ -119,7 +119,7 @@ async function updateTimer(formattedDate, formattedTime, stopInterval) {
   const currentDate = new Date().getTime();
   const timeRemaining = targetDate - currentDate;
   
-  if (timeRemaining <= 0) {
+  if (timeRemaining < 0) {
     clearInterval(stopInterval);
     go();
   }

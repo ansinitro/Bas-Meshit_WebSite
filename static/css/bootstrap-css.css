@@ -172,7 +172,7 @@ nav .fa-solid {
 
 .form-box {
   max-width: 450px;
-  padding: 3% 4% 5%;
+  padding: 3% 4% 4%;
 }
 
 .form-box h1 {
@@ -217,11 +217,10 @@ form p {
 }
 
 .input-groups {
-  height: 180px;
+  height: 172px;
 }
 
 .btn-field button {
-  flex-basis: 48%;
   height: 40px;
   outline: 0;
   cursor: pointer;
@@ -234,5 +233,18 @@ form p {
   } 
   .input-groups {
     height: 160px;
+  }
+}
+
+/* Contact Us */
+iframe {
+  width: 600px;
+  height: 450px;
+}
+
+@media(max-width: 700px) {
+  iframe {
+    width: 300px;
+    height: 200px;
   }
 }

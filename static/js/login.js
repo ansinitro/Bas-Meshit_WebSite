@@ -30,13 +30,29 @@ const form = document.getElementById('form');
 const namee = document.getElementById('name');
 const email = document.getElementById('email');
 const passwd = document.getElementById('passwd');
+const signin = document.getElementById("signInBtn")
+const signup = document.getElementById("signUpBtn")
 
 form.addEventListener('submit', function (event) {
-  if (form.getElementsByClassName("is-valid").length == 7) {
-    alert("Сіздің форманыз қабылданды.");
-  } else {
-    alert("Қатені дұрыстаңыз.");
-  }
+  if (form.action == "http://localhost:777/signin") {
+    if (form.getElementsByClassName("is-valid").length != 2) {
+        alert("Please enter both email and password for Sign In.");
+        event.preventDefault(); // Prevent form submission
+    }
+} else {
+  if (form.getElementsByClassName("is-valid").length != 3) {
+        alert("Name: must be capitalized, email, and password for Sign Up.");
+        event.preventDefault(); // Prevent form submission
+    }
+}
+});
+
+signin.addEventListener("click", function() {
+  form.action="/signin";
+});
+
+signup.addEventListener("click", function() {
+  form.action="/signup";
 });
 
 namee.addEventListener("input", function (element) {
@@ -52,20 +68,27 @@ passwd.addEventListener("input", function (element) {
 });
 
 function isValidName(el, element) {
+  let val = element.target.value.trim();
+  el.setAttribute("value", val);
   let namee = element.target.value.trim();
   const regex = new RegExp('^[A-Z][a-z]+');
   console.log(regex.test(namee), namee);
   if (regex.test(namee) && (namee.length > 2 && namee.length < 50)) {
     setValid(el);
+    return true;
   } else {
     setInvalid(el);
+    return false;
   }
 }
 
 function isValidPassword(el, element) {
+  let val = element.target.value.trim();
+  el.setAttribute("value", val);
   let password = element.target.value;
   console.log(password);
   if (password.length < 8) {
+    setInvalid(el);
     return false;
   }
 
@@ -75,8 +98,10 @@ function isValidPassword(el, element) {
 
   if (hasLetter && hasNumber && hasSpecialChar) {
     setValid(el);
+    return true;
   } else {
     setInvalid(el);
+    return false;
   }
 }
 
@@ -84,16 +109,18 @@ function isValidPassword(el, element) {
 function isValidEmail(el, element) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   let val = element.target.value.trim();
-
   el.setAttribute("value", val);
 
   if (val === '') {
     setInvalid(el);
+    return false;
   } else if (!re.test(String(val).toLowerCase())) {
     setInvalid(el);
+    return false;
   } else {
     setValid(el);
   }
+  return true;
 }
 
 function setInvalid(element) {
