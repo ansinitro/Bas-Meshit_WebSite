@@ -8,6 +8,7 @@ const age = document.getElementById('age');
 const check = document.getElementById('check');
 
 form.addEventListener('submit', function (event) {
+  console.log("Iamhere");
   if (course.value === 'choose') {
     setInvalid(course);
     event.preventDefault();
@@ -80,11 +81,10 @@ function isValidEmail(el, element) {
 }
 
 function isValidName(el, element) {
-  let namee = element.target.value.trim();
+  let val = element.target.value.trim();
   el.setAttribute("value", val)
   const regex = new RegExp('^[A-Z][a-z]+');
-  console.log(regex.test(namee), namee);
-  if (regex.test(namee) && (namee.length >= 2 && namee.length < 50)) {
+  if (regex.test(val) && (val.length >= 2 && val.length < 50)) {
     setValid(el);
   } else {
     setInvalid(el);

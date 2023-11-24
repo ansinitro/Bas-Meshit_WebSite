@@ -12,8 +12,8 @@ var tpl *template.Template
 var store = sessions.NewCookieStore([]byte("bismillah"))
 
 type User struct {
-	Name, Surname, Email, Course string
-	Id, Phone, Age               int
+	Name, Surname, Email, Course, ErrMessage string
+	Id, Phone, Age                           int
 }
 
 func init() {
@@ -28,13 +28,14 @@ func main() {
 	defer CloseDB()
 
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static/"))))
-	http.HandleFunc("/", indexHandler)
-	http.HandleFunc("/index", indexHandler)
+	http.HandleFunc("/", Auth(indexHandler))
+	http.HandleFunc("/index", Auth(indexHandler))
 	http.HandleFunc("/forgotPassword", forgotPasswordHandler)
+	http.HandleFunc("/forgotPasswordChange", forgotPasswordHandler)
 	http.HandleFunc("/contact-us", contactUsHandler)
 	http.HandleFunc("/login", loginHandler)
 	http.HandleFunc("/registration", registrationHandler)
-	http.HandleFunc("/reg", registerOnCourseHandler)
+	http.HandleFunc("/verifyemail", verifyEmailHandler)
 	http.HandleFunc("/signup", signUpHandler)
 	http.HandleFunc("/signin", signInHandler)
 	http.HandleFunc("/logout", deleteSessionHandler)

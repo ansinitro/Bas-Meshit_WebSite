@@ -14,7 +14,7 @@ func OpenDB() error {
 		host     = "localhost"
 		port     = 7777
 		user     = "postgres"
-		password = "15691804"
+		password = ""
 		dbname   = "BasMeshit"
 	)
 

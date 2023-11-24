@@ -92,29 +92,30 @@
               class="text-decoration-none text-light fs-6">НАМАЗ</a></li> -->
           <li class="px-3 py-1 position-relative"><a href="contact-us"
               class="text-decoration-none text-light fs-6">БАЙЛАНЫС</a></li>
-          <li class="px-3 py-1 position-relative"><a href="login" class="text-decoration-none text-light fs-6">КІРУ</a></li>
+          <li class="px-3 py-1 position-relative"><a href="/login" class="text-decoration-none text-light fs-6">КІРУ</a></li>
         </ul>
       </div>
       <i class="fa-solid fa-bars" onclick="showMenu()"></i>
     </nav>
       <div
         class="form-box bg-light text-center position-absolute top-50 start-50 translate-middle text-center text-light rounded-4 w-80">
-        <h1 class="mb-4 position-relative text-info" id="title">Құпия сөзді жанарту</h1>
-        <form id="form" name="form" action="/forgotPassword" method="POST">
-          <div class="input-groups" style="height: 100px">
+        <h1 class="mb-4 position-relative text-info" id="title">Пошта растау</h1>
+        <form id="form" name="form" action="/verifyemail" method="POST">
+          <div class="input-groups" style="height: 120px">
             <div class="input-field my-2 rounded-2 align-items-center d-flex overflow-hidden">
               <i class="fa-solid fa-envelope"></i>
-              <input id="email" type="text" name="email" placeholder="Пошта" class="inputs w-100 bg-transparent border-0 form-control">
+              <input id="email" type="text" name="email" placeholder="Пошта" {{if .Email}}value="{{.Email}}" {{end}} class="inputs w-100 bg-transparent border-0 form-control">
             </div>
-            <br><br>
+            <div class="input-field my-2 rounded-2 align-items-center d-flex overflow-hidden">
+              <i class="fa-solid fa-lock"></i>
+              <input id="vercode" name="vercode" type="text" placeholder="Verification code" class="inputs w-100 bg-transparent border-0 form-control">
+            </div>
           </div>
           <div class="btn-field w-100 d-flex justify-content-between">
             <button type="submit" class="text-light bg-success border-0 col-4" id="">Растау</button>
           </div>
           <br>
-          {{if .}}
-              <p class="text-warning fs-14px m-0">{{.ErrMessage}}</p>
-          {{end}}
+             <p class="text-warning fs-14px m-0">{{.ErrMessage}}</p>
         </form>
       </div>
     </div>

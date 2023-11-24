@@ -10,12 +10,12 @@ import (
 func adminHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		tpl.ExecuteTemplate(w, "admin-login.html", nil)
+		return
 	}
 	r.ParseForm()
 	passwd := r.Form.Get("passwd")
 
-	//check is user with same email exist
-	stmt := "SELECT password FROM users WHERE email = $1"
+	stmt := "SELECT hash FROM users WHERE email = $1"
 	row := DB.QueryRow(stmt, "admin@admin.com")
 	var hash string
 	err := row.Scan(&hash)
@@ -57,5 +57,4 @@ func adminHandler(w http.ResponseWriter, r *http.Request) {
 	}
 	log.Print("incorrect password")
 	tpl.ExecuteTemplate(w, "admin-login.html", "Incorrect Password")
-
 }

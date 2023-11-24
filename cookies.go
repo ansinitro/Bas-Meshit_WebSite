@@ -35,7 +35,7 @@ func deleteSessionHandler(w http.ResponseWriter, r *http.Request) {
 	session, _ := store.Get(r, "biscuits")
 	session.Options.MaxAge = -1
 	session.Save(r, w)
-	tpl.ExecuteTemplate(w, "index.html", nil)
+	http.Redirect(w, r, "/", 302)
 }
 
 func getUser(r *http.Request) (*User, error) {
