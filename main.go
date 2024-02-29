@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/context"
 	"github.com/gorilla/sessions"
@@ -42,5 +43,13 @@ func main() {
 	http.HandleFunc("/logout", deleteSessionHandler)
 	http.HandleFunc("/admin", adminHandler)
 	http.HandleFunc("/sendEverybody", sendEverybody)
-	http.ListenAndServe("localhost:777", context.ClearHandler(http.DefaultServeMux))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "777" // Default port if PORT environment variable is not set
+	}
+	log.Printf("Server listening on port %s", port)
+	err = http.ListenAndServe(":"+port, context.ClearHandler(http.DefaultServeMux))
+	if err != nil {
+		log.Fatal("ListenAndServe:", err)
+	}
 }
