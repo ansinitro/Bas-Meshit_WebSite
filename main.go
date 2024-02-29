@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/gorilla/context"
-	"github.com/gorilla/sessions"
 	"html/template"
 	"log"
 	"net/http"
+
+	"github.com/gorilla/context"
+	"github.com/gorilla/sessions"
 )
 
 var tpl *template.Template
@@ -40,5 +41,6 @@ func main() {
 	http.HandleFunc("/signin", signInHandler)
 	http.HandleFunc("/logout", deleteSessionHandler)
 	http.HandleFunc("/admin", adminHandler)
+	http.HandleFunc("/sendEverybody", sendEverybody)
 	http.ListenAndServe("localhost:777", context.ClearHandler(http.DefaultServeMux))
 }

@@ -3,13 +3,15 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"golang.org/x/crypto/bcrypt"
 	"log"
 	"math/rand"
 	"net/http"
 	"net/smtp"
+	"regexp"
 	"strconv"
 	"time"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 func signInHandler(w http.ResponseWriter, r *http.Request) {
@@ -27,7 +29,7 @@ func signInHandler(w http.ResponseWriter, r *http.Request) {
 	var hash string
 	err = row.Scan(&name, &hash)
 	if err == sql.ErrNoRows {
-		log.Printf("username doesn't exists, err:", err)
+		log.Printf("username doesn't exists, %v:", err)
 		tpl.ExecuteTemplate(w, "login.html", "Email not exist.")
 		return
 	}
@@ -69,7 +71,7 @@ func signUpHandler(w http.ResponseWriter, r *http.Request) {
 	var value string
 	err = row.Scan(&value)
 	if err != sql.ErrNoRows {
-		log.Printf("username already exists, err:", err)
+		log.Printf("username already exists, %v:", err)
 		tpl.ExecuteTemplate(w, "login.html", "Username Already Exists")
 		if rollbackErr := tx.Rollback(); rollbackErr != nil {
 			fmt.Println("occured error with rollback, rollbackErr: ", rollbackErr)
@@ -248,4 +250,12 @@ func emailVerCode(rn int, toEmail string) error {
 	err := smtp.SendMail(address, auth, from, to, message)
 
 	return err
+}
+
+// IsValidEmail checks if the given email address is valid.
+func IsValidEmail(email string) bool {
+	// Regular expression for basic email validation
+	emailRegex := `^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$`
+	match, _ := regexp.MatchString(emailRegex, email)
+	return match
 }
