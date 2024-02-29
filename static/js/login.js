@@ -33,19 +33,21 @@ const passwd = document.getElementById('passwd');
 const signin = document.getElementById("signInBtn")
 const signup = document.getElementById("signUpBtn")
 
-form.addEventListener('submit', function (event) {
-  console.log(form.getAttribute("action"));
-  if (form.getAttribute("action") === "/signin") {
-    if (form.getElementsByClassName("is-valid").length != 2) {
-        alert("Please enter both email and password for Sign In.");
-        event.preventDefault(); // Prevent form submission
-    } 
-} else {
-  if (form.getElementsByClassName("is-valid").length != 3) {
-        alert("Name: must be capitalized, email, and password for Sign Up.");
-        event.preventDefault(); // Prevent form submission
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  if (form.getAttribute("action") === "/auth/login") {
+    if (email.classList.value.includes('is-valid') && passwd.classList.value.includes('is-valid')) {
+      form.submit();
+    } else {
+      alert("Please enter both email and password for Sign In.");
     }
-}
+  } else {
+    if (namee.classList.value.includes('is-valid') && email.classList.value.includes('is-valid') && passwd.classList.value.includes('is-valid')) {
+      form.submit();
+    } else {
+      alert("Name: must be capitalized, email, and password for Sign Up.");
+    }
+  }
 });
 
 signin.addEventListener("click", function() {
