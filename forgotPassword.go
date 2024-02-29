@@ -94,7 +94,7 @@ func forgotPasswordHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	from := "ansish2005@gmail.com"
-	password := ""
+	password := "zqin vdaw xnxi luuk"
 	to := []string{email}
 	host := "smtp.gmail.com"
 	port := "587"

@@ -232,8 +232,8 @@ func verifyEmailHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func emailVerCode(rn int, toEmail string) error {
-	from := ""
-	password := ""
+	from := "ansish2005@gmail.com"
+	password := "zqin vdaw xnxi luuk"
 	to := []string{toEmail}
 	host := "smtp.gmail.com"
 	port := "587"

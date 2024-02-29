@@ -2,7 +2,7 @@ async function fetchLocalJSON() {
   try {
     //   const response = await fetch('../static/json/data.json',{mode: 'no-cors'});
 
-    const response = await fetch('../static/json/data.json', {
+    const response = await fetch('https://api.muftyat.kz/prayer-times/2024/51.133333/71.433333?format=json', {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
@@ -32,7 +32,7 @@ async function getTodayTime() {
 async function getNeddedTimeJSON(response, formattedDate) {
   try {
     data = await response.json();
-
+    console.log(`Data: ${data.result[0].Date}`);
     return data.result.find(entry => entry.Date === formattedDate);
   } catch (error) {
     console.error('There has been a problem with your fetch operation:', error);
@@ -144,8 +144,11 @@ let timerInterval;
 
 async function main() {
   const response = await fetchLocalJSON();
+  console.log(`Response: ${response}`);
   formattedDate = await getTodayTime();
+  console.log(`Formatted Date: ${formattedDate}`);
   let todayTimeJSON = await getNeddedTimeJSON(response, formattedDate);
+  console.log(`Today Time Json: ${todayTimeJSON}`);
   await setPrayerTime(todayTimeJSON);
   prayerNext = await whichPrayerNext(todayTimeJSON);
   await setActiveMode(prayerNext);
