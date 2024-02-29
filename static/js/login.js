@@ -34,7 +34,7 @@ const signin = document.getElementById("signInBtn")
 const signup = document.getElementById("signUpBtn")
 
 form.addEventListener('submit', function (event) {
-  if (form.action == "http://localhost:777/signin") {
+  if (form.getAttribute("action") == "/signin") {
     if (form.getElementsByClassName("is-valid").length != 2) {
         alert("Please enter both email and password for Sign In.");
         event.preventDefault(); // Prevent form submission
