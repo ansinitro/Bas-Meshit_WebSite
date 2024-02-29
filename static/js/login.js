@@ -35,7 +35,7 @@ const signup = document.getElementById("signUpBtn")
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  if (form.getAttribute("action") === "/auth/login") {
+  if (form.getAttribute("action") === "/signin") {
     if (email.classList.value.includes('is-valid') && passwd.classList.value.includes('is-valid')) {
       form.submit();
     } else {
@@ -75,7 +75,6 @@ function isValidName(el, element) {
   el.setAttribute("value", val);
   let namee = element.target.value.trim();
   const regex = new RegExp('^[A-Z][a-z]+');
-  console.log(regex.test(namee), namee);
   if (regex.test(namee) && (namee.length > 2 && namee.length < 50)) {
     setValid(el);
     return true;
@@ -89,7 +88,6 @@ function isValidPassword(el, element) {
   let val = element.target.value.trim();
   el.setAttribute("value", val);
   let password = element.target.value;
-  console.log(password);
   if (password.length < 8) {
     setInvalid(el);
     return false;
