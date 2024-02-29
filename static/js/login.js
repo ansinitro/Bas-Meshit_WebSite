@@ -34,11 +34,12 @@ const signin = document.getElementById("signInBtn")
 const signup = document.getElementById("signUpBtn")
 
 form.addEventListener('submit', function (event) {
-  if (form.getAttribute("action") == "/signin") {
+  console.log(form.getAttribute("action"));
+  if (form.getAttribute("action") === "/signin") {
     if (form.getElementsByClassName("is-valid").length != 2) {
         alert("Please enter both email and password for Sign In.");
         event.preventDefault(); // Prevent form submission
-    }
+    } 
 } else {
   if (form.getElementsByClassName("is-valid").length != 3) {
         alert("Name: must be capitalized, email, and password for Sign Up.");
