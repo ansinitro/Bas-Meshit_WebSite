@@ -30,6 +30,7 @@ func signInHandler(w http.ResponseWriter, r *http.Request) {
 	err = row.Scan(&name, &hash)
 	if err == sql.ErrNoRows {
 		log.Printf("username doesn't exists, %v:", err)
+		w.WriteHeader(http.StatusNotFound)
 		tpl.ExecuteTemplate(w, "login.html", "Email not exist.")
 		return
 	}
@@ -40,10 +41,12 @@ func signInHandler(w http.ResponseWriter, r *http.Request) {
 		log.Print("successe login")
 		createSession(w, r, name, email)
 		//tpl.ExecuteTemplate(w, "index.html", "You succesufully logged in")
+		w.WriteHeader(http.StatusOK)
 		http.Redirect(w, r, "/index", 302)
 		return
 	}
 	log.Print("incorrect password")
+	w.WriteHeader(http.StatusUnauthorized)
 	tpl.ExecuteTemplate(w, "login.html", "Incorrect Password")
 }
 
